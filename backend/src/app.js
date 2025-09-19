@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true, limit: "20kb"}))
 app.use(
   cors({
-    origin: "https://contact-book-app-frontend.onrender.com/",
+    origin: "https://contact-book-app-frontend.onrender.com",
     credentials: true,
   })
 );
