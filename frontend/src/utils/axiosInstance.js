@@ -1,6 +1,6 @@
 import axios from 'axios';
 
 export const axiosInstance = axios.create({
-    baseURL: "http://localhost:5000",
+    baseURL: "https://contact-book-app-backend-20ie.onrender.com/",
     withCredentials: true
 })
