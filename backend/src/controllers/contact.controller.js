@@ -13,6 +13,16 @@ const createContact = async (req, res) => {
             return res.status(400).json({ success: false, message: "invalid email" });
         }
 
+        if(phone.length != 10){
+            return res.status(400).json({success: false, message: "phone number must be 10 chars"})
+        }
+
+        const phoneRegx = /^\\d{10}$/;
+
+        if(!phoneRegx.test(phone)){
+            return res.status(400).json({success: false, message: "invalid phone number"});
+        }
+
         const existingUser = await Contact.findOne({
             $or: [{ name }, { phone }]
         });
